@@ -230,7 +230,7 @@ namespace sio
 
     bool packet::is_binary_message(string const& payload_ptr)
     {
-        return payload_ptr.size()>0 && payload_ptr[0] == frame_message;
+        return (payload_ptr.size() > 0 && payload_ptr[0] == frame_message) || !isdigit(payload_ptr[0]);
     }
 
     bool packet::is_text_message(string const& payload_ptr)
